@@ -19,8 +19,12 @@ def hello_world():
 @app.route('/submit-cp', methods=['POST'])
 def submitCp():
     data = request.get_json()
-    csvFileName = "/tmp/algoData"+str(uuid.uuid4())+".csv"
-    with open (csvFileName, 'w', newline='') as f:
+    # get file path to tmp folder in root directory
+    
+    absolute_path = os.path.dirname(os.path.abspath(__file__))
+    csvFileName = absolute_path+"/tmp/algoData"+str(uuid.uuid4())+".csv"
+    print('csvFileName: ', csvFileName)
+    with open(csvFileName, 'w', newline='') as f:
         fieldnames = ['event', 'arg', 'line', 'lasti', 'opcode', 'localObjects']
         writer = csv.writer(f)
         writer.writerow(fieldnames)
