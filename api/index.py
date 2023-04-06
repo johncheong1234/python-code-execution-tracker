@@ -69,10 +69,10 @@ def submitCp():
         reader = csv.DictReader(f)
         for row in reader:
             # check if the line number is valid
-            if 62<int(row['line']):
-                # codeLinePrior = codeLines[int(row['line'])-3]
-                codeLineAt = codeLines[int(row['line'])-63]
-                row['codeLineAt'] = codeLineAt
+            # if 62<int(row['line']):
+            #     # codeLinePrior = codeLines[int(row['line'])-3]
+            #     codeLineAt = codeLines[int(row['line'])-63]
+            #     row['codeLineAt'] = codeLineAt
                 # row['codeLinePrior'] = codeLinePrior
                 # convert row['localObjects'] string to dict
                 # row['localObjects'] = json.loads(p.sub('\"', row['localObjects']))
