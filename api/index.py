@@ -100,7 +100,7 @@ def submitCp():
         f.write('\"'+csvFileName+'\"')
         f.write(' \n')
         f.write('with open (csvFileName, \'w\', newline=\'\') as f: \n')
-        f.write('      fieldnames = [\'event\', \'arg\', \'line\', \'lasti\', \'opcode\', \'localObjects\'] \n')
+        f.write('    fieldnames = [\'event\', \'arg\', \'line\', \'lasti\', \'opcode\', \'localObjects\'] \n')
         f.write('    writer = csv.writer(f) \n')
         f.write('    writer.writerow(fieldnames) \n')
         f.write('def show_trace(frame, event, arg):\n')
@@ -158,7 +158,7 @@ def submitCp():
                 # row['localObjects'] = json.loads(p.sub('\"', row['localObjects']))
             visualList.append(row)
 
-
+    os.remove(csvFileName)  
     return {'visualList': visualList}
 
 if __name__ == '__main__':
