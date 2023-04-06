@@ -22,7 +22,7 @@ def submitCp():
     # get file path to tmp folder in root directory
     
     absolute_path = os.path.dirname(os.path.abspath(__file__))
-    csvFileName = absolute_path+"/tmp/algoData"+str(uuid.uuid4())+".csv"
+    csvFileName = "../tmp/algoData"+str(uuid.uuid4())+".csv"
     print('csvFileName: ', csvFileName)
     with open(csvFileName, 'w', newline='') as f:
         fieldnames = ['event', 'arg', 'line', 'lasti', 'opcode', 'localObjects']
