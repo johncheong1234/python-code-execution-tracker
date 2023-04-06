@@ -69,9 +69,9 @@ def submitCp():
         reader = csv.DictReader(f)
         for row in reader:
             # check if the line number is valid
-            if 51<int(row['line']):
+            if 61<int(row['line']):
                 # codeLinePrior = codeLines[int(row['line'])-3]
-                codeLineAt = codeLines[int(row['line'])-52]
+                codeLineAt = codeLines[int(row['line'])-62]
                 row['codeLineAt'] = codeLineAt
                 # row['codeLinePrior'] = codeLinePrior
                 # convert row['localObjects'] string to dict
